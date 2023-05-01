@@ -27,11 +27,11 @@ Nepalidatedatabase myData = new Nepalidatedatabase();
 		<p>Instantly Convert date from BS to AD and vice versa. Thank you</p>
 	
 		<div class="row">
-			<div class="col-sm-6" style="background-color: yellow;">
+			<div class="col-sm-6" style="background-color: lightblue;">
 			<h2> AD to BS Converter</h2>
 				<form action="englishtonepalidateconvert" method="post">
 
-					<select id="engyear" name="engyear" style="width: 100px">
+					<select id="engyear" name="engyear" style="width: 100px" required>
 					<option value="">Select Year</option>
 
 						<script type="text/javascript">
@@ -40,7 +40,7 @@ Nepalidatedatabase myData = new Nepalidatedatabase();
 										+ "</option>");
 							}
 						</script>
-					</select> <select id="engmonth" name="engmonth" style="width: 100px">
+					</select> <select id="engmonth" name="engmonth" style="width: 100px" required>
 						<option value="">Select Month</option>
 						<option value="01">January</option>
 						<option value="02">February</option>
@@ -54,24 +54,24 @@ Nepalidatedatabase myData = new Nepalidatedatabase();
 						<option value="10">October</option>
 						<option value="11">November</option>
 						<option value="12">December</option>
-					</select> <select id="engday" name="engday">
+					</select> <select id="engday" name="engday" required>
 					<option value="">Select Day</option>
 						<script src="dayselectenglish.js" type="text/javascript">
 							
 						</script>
 
 					</select> <input type="submit" value="convert">
-
+<script src="formvalidation.js"></script>
 				</form>
 				${nepalidate}
 			</div>
 
 
-			<div class="col-sm-6" style="background-color: pink;">
+			<div class="col-sm-6" style="background-color: lightcyan;">
 				<h2> BS to AD Converter</h2>
 				<form action="nepalitoenglishdateconvert" method="post">
 
-					<select id="nepyear" name="nepyear" style="width: 100px">
+					<select id="nepyear" name="nepyear" style="width: 100px" required>
 						<option value="">Select Year</option>
 						<script type="text/javascript">
 							for (var i = 2000; i <= 2090; i++) {
@@ -79,7 +79,7 @@ Nepalidatedatabase myData = new Nepalidatedatabase();
 										+ "</option>");
 							}
 						</script>
-					</select> <select id="nepmonth" name="nepmonth" style="width: 100px">
+					</select> <select id="nepmonth" name="nepmonth" style="width: 100px" required>
 						<option value="">Select Month</option>
 						<option value="01">Baisakh</option>
 						<option value="02">Jestha</option>
@@ -93,18 +93,46 @@ Nepalidatedatabase myData = new Nepalidatedatabase();
 						<option value="10">Magh</option>
 						<option value="11">Falgun</option>
 						<option value="12">Chaitra</option>
-					</select> <select id="nepday" name="nepday" style="width: 100px">
+					</select> <select id="nepday" name="nepday" style="width: 100px" required>
 						<option value="">Select day</option>
 						<script src="dayselect.js" type="text/javascript">				
 						</script>
 					</select> <input type="submit" value="convert">
-
+<script src="formvalidation.js"></script>
 				</form>
 				${englishdate}
 
 			</div>
 		</div>
 	</div>
+	<style>
+  /* Style the select dropdowns */
+  select {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin-right: 8px;
+  }
+
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Change the background color when the mouse hovers over the submit button */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+</style>
+	
 	<hr>
 	</body>
 </html>

@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
+import com.example.demo.calculator;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpSession;
@@ -10,7 +11,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public String homepage() {
 		
-		return "homepage.jsp";
+		return "mainpage.jsp";
 		
 	}
 	@RequestMapping("englishtonepalidateconvert")
@@ -29,6 +30,18 @@ public class HomeController {
 		session.setAttribute("englishdate", englishdate);
 		System.out.println("english date is"+englishdate);
 		return "homepage.jsp";
+		
+	}
+	
+	@RequestMapping("emicalculator")
+	public String EMICALCULATOR(String loanamt,String loanperiod,String lpm,String interestrate, HttpSession session) {
+		double loanamount=Double.parseDouble(loanamt);
+		double Loanperiod=Double.parseDouble(loanperiod);
+		double LPM=Double.parseDouble(lpm);
+		double Interestrate=Double.parseDouble(interestrate);
+		String[][]detailcalculation=calculator.detailcalculation(loanamount,Loanperiod,LPM,Interestrate);
+		session.setAttribute("detailvalue", detailcalculation);
+		return "emicalculator.jsp";
 		
 	}
 
