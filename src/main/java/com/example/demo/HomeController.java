@@ -35,12 +35,21 @@ public class HomeController {
 	
 	@RequestMapping("emicalculator")
 	public String EMICALCULATOR(String loanamt,String loanperiod,String lpm,String interestrate, HttpSession session) {
-		double loanamount=Double.parseDouble(loanamt);
-		double Loanperiod=Double.parseDouble(loanperiod);
-		double LPM=Double.parseDouble(lpm);
-		double Interestrate=Double.parseDouble(interestrate);
-		String[][]detailcalculation=calculator.detailcalculation(loanamount,Loanperiod,LPM,Interestrate);
+loanamt=loanamt==null?"50000":loanamt;
+ loanperiod=loanperiod==null?"5":loanperiod;
+ lpm=lpm==null?"0":lpm;
+ interestrate=interestrate==null?"16":interestrate;
+		double Dloanamt=Double.parseDouble(loanamt);
+		double Dloanperiod=Double.parseDouble(loanperiod);
+		double Dlpm=Double.parseDouble(lpm);
+		double Dinterestrate=Double.parseDouble(interestrate);
+		String[][]detailcalculation=calculator.detailcalculation(Dloanamt,Dloanperiod,Dlpm,Dinterestrate);
 		session.setAttribute("detailvalue", detailcalculation);
+		session.setAttribute("loanamt", loanamt);
+		session.setAttribute("loanperiod", loanperiod);
+		session.setAttribute("lpm", lpm);
+		session.setAttribute("interestrate", interestrate);
+		
 		return "emicalculator.jsp";
 		
 	}

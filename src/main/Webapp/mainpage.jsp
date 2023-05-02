@@ -71,7 +71,7 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <p><a href="homepage.jsp">Date-Converter</a></p>
-      <p><a href="emicalculator.jsp">EMI-Calculator</a></p>
+      <p><a href="emicalculator">EMI-Calculator</a></p>
       <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
