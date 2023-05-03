@@ -8,6 +8,7 @@ public class MybootwebprojectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MybootwebprojectApplication.class, args);
+		
 	}
 
 }
