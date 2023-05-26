@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Insert title here</title>
 </head>
 <body>
-this is main page, you can enter here freely without any security check
+you got delete request, only admin are allowed to do this
 </body>
 </html>

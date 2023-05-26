@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Insert title here</title>
 </head>
 <body>
-this is main page, you can enter here freely without any security check
+this is update page, user and admin both can authorize this but authentication is most
 </body>
 </html>
